@@ -1,0 +1,38 @@
+{
+  "name": "base-ts-node",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "dev-watch": "nodemon src/index.ts",
+    "start": "node dist/index.js",
+    "test": "ts-node src/test.ts",
+    "build": "rm -rf dist && tsc",
+    "dep": "docker-compose -f docker-compose.yml up --build -d",
+    "dep:log": "docker-compose -f docker-compose.yml up --build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.19.31",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@ton/crypto": "^3.2.0",
+    "@ton/ton": "^13.11.2",
+    "axios": "^1.7.2",
+    "mongodb": "^6.7.0",
+    "tonweb": "^0.0.66",
+    "tonweb-mnemonic": "^1.0.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/test/**",
+      "**/docs/**"
+    ],
+    "delay": 2500
+  }
+}
